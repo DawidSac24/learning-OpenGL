@@ -47,6 +47,11 @@ class Application
         return nullptr;
     }
 
+    std::vector<std::unique_ptr<Layer>> &GetLayerStack()
+    {
+        return m_LayerStack;
+    }
+
     glm::vec2 GetFramebufferSize() const;
 
     static Application &Get();

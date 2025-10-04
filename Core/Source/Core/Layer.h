@@ -28,6 +28,12 @@ class Layer
         QueueTransition(std::move(std::unique_ptr<T>(std::forward<Args>(args)...)));
     }
 
+    Layer operator=(const Layer &other)
+    {
+        this = other;
+        return *this;
+    }
+
   private:
     void QueueTransition(std::unique_ptr<Layer> layer);
 };
